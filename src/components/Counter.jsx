@@ -132,13 +132,15 @@ const Counter = () => {
         }}
       >
         <Button
-          sx={{ width: "250px", fontSize: "20px" }}
+          sx={{
+            width: "250px",
+            fontSize: "20px",
+            bgcolor: isRunning ? "#9e9e9e" : "primary.main",
+          }}
           variant="contained"
-          color="primary"
-          onClick={start}
-          disabled={isRunning}
+          onClick={isRunning ? reset : start}
         >
-          {isRunning ? "Stop" : "Start"}
+          {isRunning ? "stop" : "Start"}
         </Button>
 
         <IconButton color="default" aria-label="reset timer" onClick={reset}>
